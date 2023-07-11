@@ -1,0 +1,27 @@
+{
+    "dotnet.defaultSolution": "LohceRecognition.sln",
+    "cSpell.words": [
+        "audiofile",
+        "dateparser",
+        "englishrecognizer",
+        "ents",
+        "Featurize",
+        "frenchrecognizer",
+        "Lohce",
+        "moviepy",
+        "Multiclass",
+        "ngram",
+        "Ngrams",
+        "openai",
+        "scrapengine",
+        "Sdca",
+        "setuptools",
+        "spacy",
+        "vosk"
+    ],
+    "python.analysis.typeCheckingMode": "basic",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.autopep8"
+    },
+    "python.formatting.provider": "none"
+}
