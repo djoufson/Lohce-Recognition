@@ -28,7 +28,7 @@ if supported:
     should_proceed = False
     # Transcript the audio file
     text = recognizer.recognize_assembly(path)
-    print(text)
+    print("\nQuery:",text)
 
     should_proceed = text != None
 
@@ -39,11 +39,13 @@ if supported:
         source, destination, schedules = compute_spacy(text, nlp)
 
         # Print out the results
-        print("Source: ", source)
+        print("\nSource: ", source)
         print("Destination: ", destination)
         print("Schedules: ", schedules)
 
         # Call to the lohce api
         data = fetch_lohce(source, destination, schedules.strftime("%d-%m-%Y"))
         json_str = json.dumps(data.json(), indent=4, sort_keys=True)
+
+        print("\nResponse:\n")
         print(json_str)
