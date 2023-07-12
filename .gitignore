@@ -7,9 +7,7 @@ __pycache__/
 model/
 model/*
 
-# Output files
-out/
-output/
+# For personal purpose
 client/
 
 # C extensions
