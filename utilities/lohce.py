@@ -3,13 +3,13 @@ import hashlib
 
 key = "rh8b2v4tLJ2avDBZ"
 base_url = "https://lohce.com/apiusers/gettravels"
-headers = {"Content-Type": "application/json"}
 language = "fr";
 version = "1.0";
 
 def fetch_lohce(source, destination, schedules):
+    # content = key + "douala" + "yaounde" + "12-07-2023" + language + version
     content = key + source + destination + schedules + language + version
-    hash = hashlib.md5(content.encode());
+    hash = hashlib.md5(content.encode()).hexdigest()
     data = {
         "api_key"     : key,
         "departure"   : source,
@@ -21,6 +21,5 @@ def fetch_lohce(source, destination, schedules):
     }
 
     return requests.post(
-        base_url + "/upload",
-        headers=headers,
+        base_url,
         data=data)
