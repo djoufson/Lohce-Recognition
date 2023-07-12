@@ -81,4 +81,4 @@ The application workflow can be splitted in three main parts:
 
 - **`Call to the API`**
 
-    According to the documentation provided [here](https:/github.com/lohce/careathon2023) we are able to properly make a post call to the official Lohce API
+    According to the documentation provided [here](https://github.com/lohce/careathon2023) we are able to properly make a post call to the official Lohce API
