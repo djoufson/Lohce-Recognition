@@ -3,6 +3,8 @@
     "cSpell.words": [
         "audiofile",
         "dateparser",
+        "displacy",
+        "dobj",
         "englishrecognizer",
         "ents",
         "Featurize",
@@ -12,7 +14,9 @@
         "Multiclass",
         "ngram",
         "Ngrams",
+        "nsubj",
         "openai",
+        "pobj",
         "scrapengine",
         "Sdca",
         "setuptools",
