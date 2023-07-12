@@ -1,6 +1,7 @@
 {
     "dotnet.defaultSolution": "LohceRecognition.sln",
     "cSpell.words": [
+        "assemblyai",
         "audiofile",
         "dateparser",
         "displacy",

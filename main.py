@@ -27,8 +27,7 @@ else:
 if supported:
     should_proceed = False
     # Transcript the audio file
-    result = recognizer.recognize_assembly(path)
-    text = result
+    text = recognizer.recognize_assembly(path)
     print(text)
 
     should_proceed = text != None
@@ -36,7 +35,6 @@ if supported:
     if not should_proceed:
         print("An error occurred, you should retry")
     else:
-        # text = "Is there a bus departure from Yaounde to Douala tomorrow?"
         # Get the source, destination and schedule from the text
         source, destination, schedules = compute_spacy(text, nlp)
 
@@ -44,10 +42,6 @@ if supported:
         print("Source: ", source)
         print("Destination: ", destination)
         print("Schedules: ", schedules)
-
-        # source = "Yaounde"
-        # destination = "Douala"
-        # schedules = "12-07-2023"
 
         # Call to the lohce api
         data = fetch_lohce(source, destination, schedules.strftime("%d-%m-%Y"))
