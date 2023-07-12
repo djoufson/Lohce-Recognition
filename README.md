@@ -55,7 +55,7 @@ Here is the output you should get after properly filled the audio path and the c
 
 ![test](./assets/test.png)
 
-This test was made the 12-07-2023 at 21PM
+This test was made the 12-07-2023 at 03:27 PM
 
 ## Disclaimer
 - The application only support english inputs
