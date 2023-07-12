@@ -27,8 +27,9 @@ else:
 if supported:
     should_proceed = False
     # Transcript the audio file
-    result = recognizer.recognize_assembly(path)
-    text = result
+    # result = recognizer.recognize_assembly(path)
+    # text = result
+    text = "Is there a bus departure from Duala to Yangi tomorrow ?"
     print(text)
 
     should_proceed = text != None
