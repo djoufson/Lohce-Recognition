@@ -1,25 +1,38 @@
+import Levenshtein
 import openai
 import dateparser
 import spacy
 
 def compute_spacy(text, nlp):
+    towns = ['Douala', 'Yaoundé', 'Maroua', 'Garoua', 'Bafoussam', 'Bertoua', 'Bamenda', 'Ngaoundéré', 'Nkongsamba','Ebolowa',
+             'Edea', 'Foumban', 'Buéa', 'Dschang', 'Limbé', 'Mbouda', 'Sangmélima', 'Bafang', 'Kousséri', 'Kribi']
+    def similar_to_town(word,towns):
+        for town in towns:
+            similarity = 1- Levenshtein.distance(word,town)/max(len(word),len(town))
+            if similarity >=0.42:
+                return town
+        return "Unknown"
+
     def get_destination(doc):
-        destination = None
         for token in doc:
             if token.text == "to":
                 # Get the next token in the doc
                 next_token = doc[token.i + 1]
                 # Check if the next token is an entity
-                if next_token.ent_type == 384:
+                if next_token.ent_type == 384 or next_token.text in towns:
                     # Save the entity text in the destination variable
-                    destination = next_token.text
-        return destination
+                    return next_token.text
+                else:
+                    return similar_to_town(next_token.text,towns)
+        return "Unknown"
 
     def get_source(doc, destination):
         for ent in doc.ents:
-            if ent.label_ == "GPE" and ent.text != destination:
+            if (ent.label_ == "GPE" or ent.text in towns) and ent.text != destination:
                 return ent.text
-        return None
+            else:
+                return similar_to_town(ent.text,towns)
+        return "Unknown"
 
     def get_schedule(doc):
         for ent in doc.ents:
