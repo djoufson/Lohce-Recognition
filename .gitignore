@@ -5,7 +5,6 @@ __pycache__/
 
 # Vosk model
 model/
-model/*
 
 # For personal purpose
 client/

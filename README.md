@@ -71,13 +71,13 @@ The application workflow can be splitted in three main parts:
 
     For speech recognition, we used several methods and libraries, especially:
 
-    - [Vosk]()
-    - [Assembly AI]()
-    - [OpenAI Whisper]()
+    - [Vosk](https://alphacephei.com/vosk)
+    - [Assembly AI](https://www.assemblyai.com/)
+    - [OpenAI Whisper](https://openai.com/research/whisper)
 
 - **`Information Extraction`**
 
-    For information extraction we used the [spaCy]() library
+    For information extraction we used the [spaCy](https://spacy.io/) library
 
 - **`Call to the API`**
 
